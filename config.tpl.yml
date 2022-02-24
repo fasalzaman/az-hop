@@ -2,9 +2,9 @@
 # azure location name as returned by the command : az account list-locations -o table
 location: westeurope
 # Name of the resource group to create all resources
-resource_group: azhop
+resource_group: XXXXXXXXXXX
 # If using an existing resource group set to true. Default is false
-use_existing_rg: false
+use_existing_rg: true
 # Additional tags to be added on the Resource Group
 tags:
   env: dev
@@ -13,9 +13,9 @@ tags:
 # If not present assume that there is an existing NFS share for the users home directory
 anf:
   # Size of the ANF pool and unique volume
-  homefs_size_tb: 4
+  homefs_size_tb: 16
   # Service level of the ANF volume, can be: Standard, Premium, Ultra
-  homefs_service_level: Standard
+  homefs_service_level: Premium
   # dual protocol
   dual_protocol: false # true to enable SMB support. false by default
 
@@ -93,7 +93,7 @@ ad:
   vm_size: Standard_B2ms
 # On demand VM configuration
 ondemand:
-  vm_size: Standard_D4s_v5
+  vm_size: Standard_D32s_v5
   #fqdn: azhop.foo.com # When provided it will be used for the certificate server name
   generate_certificate: true # Generate an SSL certificate for the OnDemand portal. Default to true
 # Grafana VM configuration
@@ -132,7 +132,7 @@ lustre:
   rbh_sku: "Standard_D8d_v4"
   mds_sku: "Standard_D8d_v4"
   oss_sku: "Standard_D32d_v4"
-  oss_count: 2
+  oss_count: 4
   hsm_max_requests: 8
   mdt_device: "/dev/sdb"
   ost_device: "/dev/sdb"
@@ -151,7 +151,87 @@ users:
   # admin: false # true will allow user to have cluster admin privilege - false by default
   # sudo: true # Allow sudo access on cluster compute nodes - false by default
   - { name: clusteradmin, uid: 10001, gid: 5000, admin: true, sudo: true }
-  - { name: clusteruser, uid: 10002, gid: 5000 }
+  - { name: clusteruser1, uid: 10002, gid: 5000 }
+  - { name: clusteruser2, uid: 10003, gid: 5000 }
+  - { name: clusteruser3, uid: 10004, gid: 5000 }
+  - { name: clusteruser4, uid: 10005, gid: 5000 }
+  - { name: clusteruser5, uid: 10006, gid: 5000 }
+  - { name: clusteruser6, uid: 10007, gid: 5000 }
+  - { name: clusteruser7, uid: 10008, gid: 5000 }
+  - { name: clusteruser8, uid: 10009, gid: 5000 }
+  - { name: clusteruser9, uid: 10010, gid: 5000 }
+  - { name: clusteruser10, uid: 10011, gid: 5000 }
+  - { name: clusteruser11, uid: 10012, gid: 5000 }
+  - { name: clusteruser12, uid: 10013, gid: 5000 }
+  - { name: clusteruser13, uid: 10014, gid: 5000 }
+  - { name: clusteruser14, uid: 10015, gid: 5000 }
+  - { name: clusteruser15, uid: 10016, gid: 5000 }
+  - { name: clusteruser16, uid: 10017, gid: 5000 }
+  - { name: clusteruser17, uid: 10018, gid: 5000 }
+  - { name: clusteruser18, uid: 10019, gid: 5000 }
+  - { name: clusteruser19, uid: 10020, gid: 5000 }
+  - { name: clusteruser20, uid: 10021, gid: 5000 }
+  - { name: clusteruser21, uid: 10022, gid: 5000 }
+  - { name: clusteruser22, uid: 10023, gid: 5000 }
+  - { name: clusteruser23, uid: 10024, gid: 5000 }
+  - { name: clusteruser24, uid: 10025, gid: 5000 }
+  - { name: clusteruser25, uid: 10026, gid: 5000 }
+  - { name: clusteruser26, uid: 10027, gid: 5000 }
+  - { name: clusteruser27, uid: 10028, gid: 5000 }
+  - { name: clusteruser28, uid: 10029, gid: 5000 }
+  - { name: clusteruser29, uid: 10030, gid: 5000 }
+  - { name: clusteruser30, uid: 10031, gid: 5000 }
+  - { name: clusteruser31, uid: 10032, gid: 5000 }
+  - { name: clusteruser32, uid: 10033, gid: 5000 }
+  - { name: clusteruser33, uid: 10034, gid: 5000 }
+  - { name: clusteruser34, uid: 10035, gid: 5000 }
+  - { name: clusteruser35, uid: 10036, gid: 5000 }
+  - { name: clusteruser36, uid: 10037, gid: 5000 }
+  - { name: clusteruser37, uid: 10038, gid: 5000 }
+  - { name: clusteruser38, uid: 10039, gid: 5000 }
+  - { name: clusteruser39, uid: 10040, gid: 5000 }
+  - { name: clusteruser40, uid: 10041, gid: 5000 }
+  - { name: clusteruser41, uid: 10042, gid: 5000 }
+  - { name: clusteruser42, uid: 10043, gid: 5000 }
+  - { name: clusteruser43, uid: 10044, gid: 5000 }
+  - { name: clusteruser44, uid: 10045, gid: 5000 }
+  - { name: clusteruser45, uid: 10046, gid: 5000 }
+  - { name: clusteruser46, uid: 10047, gid: 5000 }
+  - { name: clusteruser47, uid: 10048, gid: 5000 }
+  - { name: clusteruser48, uid: 10049, gid: 5000 }
+  - { name: clusteruser49, uid: 10050, gid: 5000 }
+  - { name: clusteruser50, uid: 10051, gid: 5000 }
+  - { name: clusteruser51, uid: 10052, gid: 5000 }
+  - { name: clusteruser52, uid: 10053, gid: 5000 }
+  - { name: clusteruser53, uid: 10054, gid: 5000 }
+  - { name: clusteruser54, uid: 10055, gid: 5000 }
+  - { name: clusteruser55, uid: 10056, gid: 5000 }
+  - { name: clusteruser56, uid: 10057, gid: 5000 }
+  - { name: clusteruser57, uid: 10058, gid: 5000 }
+  - { name: clusteruser58, uid: 10059, gid: 5000 }
+  - { name: clusteruser59, uid: 10060, gid: 5000 }
+  - { name: clusteruser60, uid: 10061, gid: 5000 }
+  - { name: clusteruser61, uid: 10062, gid: 5000 }
+  - { name: clusteruser62, uid: 10063, gid: 5000 }
+  - { name: clusteruser63, uid: 10064, gid: 5000 }
+  - { name: clusteruser64, uid: 10065, gid: 5000 }
+  - { name: clusteruser65, uid: 10066, gid: 5000 }
+  - { name: clusteruser66, uid: 10067, gid: 5000 }
+  - { name: clusteruser67, uid: 10068, gid: 5000 }
+  - { name: clusteruser68, uid: 10069, gid: 5000 }
+  - { name: clusteruser69, uid: 10070, gid: 5000 }
+  - { name: clusteruser70, uid: 10071, gid: 5000 }
+  - { name: clusteruser71, uid: 10072, gid: 5000 }
+  - { name: clusteruser72, uid: 10073, gid: 5000 }
+  - { name: clusteruser73, uid: 10074, gid: 5000 }
+  - { name: clusteruser74, uid: 10075, gid: 5000 }
+  - { name: clusteruser75, uid: 10076, gid: 5000 }
+  - { name: clusteruser76, uid: 10077, gid: 5000 }
+  - { name: clusteruser77, uid: 10078, gid: 5000 }
+  - { name: clusteruser78, uid: 10079, gid: 5000 }
+  - { name: clusteruser79, uid: 10080, gid: 5000 }
+  - { name: clusteruser80, uid: 10081, gid: 5000 }
+
 groups: # Not used today => To be used in the future
   - name: users
     gid: 5000
@@ -236,32 +316,22 @@ queues:
     ColocateNodes: false
     # Set to true to enable Enroot for this partition
     enroot_enabled: false
-  - name: hc44rs
-    vm_size: Standard_HC44rs
-    max_core_count: 440
-    image: /subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.Compute/galleries/{{sig_name}}/images/azhop-centos79-v2-rdma-gpgpu/latest
-    spot: true
   - name: hb120v2
     vm_size: Standard_HB120rs_v2
-    max_core_count: 1200
-    image: /subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.Compute/galleries/{{sig_name}}/images/azhop-centos79-v2-rdma-gpgpu/latest
-    spot: true
-  - name: hb120v3
-    vm_size: Standard_HB120rs_v3
-    max_core_count: 1200
+    max_core_count: 3600
     image: /subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.Compute/galleries/{{sig_name}}/images/azhop-centos79-v2-rdma-gpgpu/latest
     spot: true
     # Queue dedicated to GPU remote viz nodes. This name is fixed and can't be changed
   - name: viz3d
     vm_size: Standard_NV6
-    max_core_count: 24
+    max_core_count: 300
     image: /subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.Compute/galleries/{{sig_name}}/images/centos-7.8-desktop-3d/latest
     ColocateNodes: false
     spot: false
     # Queue dedicated to non GPU remote viz nodes. This name is fixed and can't be changed
   - name: viz
     vm_size: Standard_D8s_v3
-    max_core_count: 200
+    max_core_count: 400
     image: /subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.Compute/galleries/{{sig_name}}/images/centos-7.8-desktop-3d/latest
     ColocateNodes: false
     spot: false
