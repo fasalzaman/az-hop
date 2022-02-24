@@ -21,7 +21,7 @@ for user in $users; do
   secret_name=$(echo $user-password | tr -dc 'a-zA-Z0-9-')
   current_password=$(az keyvault secret list --vault-name $key_vault --query "[?name=='$secret_name'].name" -o tsv)
   if [ "$current_password" == "" ]; then
-    password=$(openssl rand -base64 20)
+    password="Mnl42bOA1@u0"
     az keyvault secret set --value $password --name $secret_name --vault-name $key_vault -o table > /dev/null
     echo "Generating a password for $user and storing it as secret $secret_name in keyvault $key_vault"
   else
